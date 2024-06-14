@@ -10,28 +10,28 @@ export default function Home() {
   const subtitulo = "El Sabor de la Ambrosia";
   const eslogan = "La Verdadera Empanada";
   const descripcion = "En La Leyenda, el arte culinario cobra vida en cada esquina. Nos dedicamos a la creación de empanadas artesanales que trascienden los límites de la exquisitez. Con una meticulosa atención al detalle y una pasión inquebrantable por la calidad, hemos perfeccionado el arte de la empanada hasta convertirlo en una experiencia sublime. Cada bocado es una obra maestra, elaborada con ingredientes selectos y un cuidado artesanal que eleva el paladar a nuevas alturas. Descubre el legendario sabor de nuestras creaciones y sumérgete en un universo de deleite gastronómico, donde la excelencia es nuestra única norma.";
-  const seguidores = "115";
+  const seguidores = "255";
 
   return (
-    <main className="dark w-full">
+    <main className="w-full">
 
       <section className="h-screen flex flex-col items-center justify-center text-center gap-1">
         <h1 className="text-5xl text-white">Empanadas:<br className="md:hidden" /> {nombre}</h1>
         <p className="text-4xl text-white">{subtitulo}</p>
       </section>
 
-      <section className="h-screen flex items-center max-md:flex-col-reverse py-8">
+      <section className="h-screen flex items-center justify-center max-md:flex-col-reverse py-8" id="nosotros">
         <div className="w-1/2 max-md:w-full">
-          <Image src="/backgrounds/empanada-arg.jpg" alt={eslogan} width={750} height={750} />
+          <Image src="/backgrounds/empanada-arg.jpg" alt={eslogan} width={700} height={700} />
         </div>
 
-        <div className="flex flex-col w-1/2 max-md:w-full text-center px-2 gap-4 max-md:mb-4">
+        <div className="flex flex-col w-1/2 max-md:w-full text-center px-2 md:px-4 gap-4 max-md:mb-4">
           <h2 className="uppercase text-2xl font-bold">{eslogan}</h2>
           <p>{descripcion}</p>
         </div>
       </section>
 
-      <section className="h-screen flex flex-col items-center text-center py-8">
+      <section className="h-screen flex flex-col items-center justify-center text-center py-8">
         <h3 className="font-bold text-3xl">El sabor de recién hechas en todo momento.</h3>
         <div className="flex flex-col items-center w-10/12 mb-4">
           <Image src="/svg-icons/kitchen.svg" alt="cocina" width={96} height={96} />
@@ -54,11 +54,11 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="h-screen flex flex-col gap-4 py-8">
+      <section className="flex flex-col gap-4 py-8">
 
         <h3 className="font-bold text-3xl text-center">Contactanos</h3>
 
-        <form action="" className=" flex flex-col gap-4 items-center">
+        <form action="" className=" flex flex-col gap-4 items-center" id="contacto">
           <Input isRequired type="nombre" placeholder="Nombre" className="w-2/4 bg-yellow-500 max-md:w-10/12" />
           <Input isRequired type="apellido" placeholder="Apellido" className="w-2/4 bg-yellow-500 max-md:w-10/12" />
           <Input isRequired type="email" placeholder="Email" className="w-2/4 bg-yellow-500 max-md:w-10/12" />
