@@ -16,7 +16,7 @@ export default function Home() {
     <main className="w-full">
 
       <section className="h-screen flex flex-col items-center justify-center text-center gap-1">
-        <h1 className="text-5xl text-white">Empanadas:<br className="md:hidden" /> {nombre}</h1>
+        <h1 className="text-5xl text-white font-bold uppercase">Empanadas:<br className="md:hidden" /> {nombre}</h1>
         <p className="text-4xl text-white">{subtitulo}</p>
       </section>
 
