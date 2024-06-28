@@ -1,8 +1,6 @@
 import { Input } from "@nextui-org/react";
 import { Textarea } from "@nextui-org/input";
 import { Button } from "@nextui-org/react";
-import { Autocomplete, AutocompleteItem } from "@nextui-org/react";
-
 
 export default function Mayorista() {
 
