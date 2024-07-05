@@ -35,7 +35,7 @@ const ProductCard = ({ item }: ProductCardProps) => {
                             src={item.img}
                         />
                     </CardBody>
-                    <CardFooter className="text-small justify-between flex flex-col">
+                    <CardFooter className="text-small justify-center flex flex-col text-center items-center">
                         <b>{item.title}</b>
                         <p className="text-default-500">{item.price}</p>
                     </CardFooter>
