@@ -1,4 +1,5 @@
 import { Button } from "@nextui-org/react";
+import GoogleMap from "../components/google-map";
 
 export default function Franquicias() {
 
@@ -36,6 +37,12 @@ export default function Franquicias() {
                     ))}
                 </ul>
                 <Button radius="full" className="bg-yellow-500">Contactanos</Button>
+            </section>
+
+            <section className="flex justify-center items-center py-8">
+                <div className=" w-11/12 flex">
+                    <GoogleMap/>
+                </div>
             </section>
         </main>
     );
