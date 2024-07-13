@@ -1,5 +1,5 @@
 import { Button } from "@nextui-org/react";
-import GoogleMap from "../components/google-map";
+import GoogleMap from "../../components/google-map";
 
 export default function Franquicias() {
 

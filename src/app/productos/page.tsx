@@ -1,4 +1,4 @@
-import ProductCard from "../components/reusable/product-card";
+import ProductCard from "../../components/reusable/product-card";
 import empanadas from "./empanadas";
 import pizzas from "./pizzas";
 import otros from "./otros";
