@@ -5,24 +5,27 @@ import Image from "next/image";
 import { Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenuToggle, NavbarMenu, NavbarMenuItem, Link } from "@nextui-org/react";
 
 export default function Header() {
-
-  const logo = "/logo.png"
-  const marca = "La Leyenda"
+  const logo = "/logo.png";
+  const marca = "La Leyenda";
 
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
   const navItems = [
     { label: "Nosotros", href: "/#nosotros" },
     { label: "Productos", href: "/productos" },
-    /*{ label: "Sucursales", href: "#" },*/
     { label: "Franquicias", href: "/franquicias" },
     { label: "Contacto", href: "/#contacto" },
     { label: "Mayorista", href: "/mayorista" }
   ];
 
   return (
-    <header>
-      <Navbar onMenuOpenChange={setIsMenuOpen} isBordered>
+    <header className="mb-16">
+      <Navbar className="bg-black"
+        onMenuOpenChange={setIsMenuOpen}
+        isBordered
+        isBlurred={false} 
+        style={{ position: "fixed", width: "100%", zIndex: 1000 }}
+      >
         <NavbarContent>
           <NavbarMenuToggle aria-label={isMenuOpen ? "Close menu" : "Open menu"} className="sm:hidden" />
 
@@ -42,7 +45,7 @@ export default function Header() {
           ))}
         </NavbarContent>
 
-        <NavbarMenu>
+        <NavbarMenu className="bg-black">
           {navItems.map((item, index) => (
             <NavbarMenuItem key={`${item.label}-${index}`} className=" flex flex-col gap-2">
               <Link href={item.href}>{item.label}</Link>

@@ -4,6 +4,7 @@ import "./globals.css";
 import { Providers } from "./providers";
 
 import Header from "../components/layout/header";
+import Footer from "@/components/layout/footer";
 
 
 const inter = Inter({ subsets: ["latin"] });
@@ -20,10 +21,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
-      <body className="dark text-foreground bg-background">
+      <body className="dark text-foreground bg-background min-w-80">
         <Providers>
           <Header/>
           {children}
+          <Footer/>
         </Providers>
       </body>
     </html>

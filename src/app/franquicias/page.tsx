@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Button } from "@nextui-org/react";
 import GoogleMap from "../../components/google-map";
 
@@ -19,15 +20,27 @@ export default function Franquicias() {
 
     return (
         <main className="w-full">
-            <section className="h-screen flex flex-col items-center justify-center text-center gap-1">
-                <h1 className="text-5xl text-white font-bold uppercase">{titulo}</h1>
-                <p className="text-4xl text-white">{subtitulo}</p>
+            <section className="relative h-screen">
+                <div className="absolute inset-0">
+                    <Image
+                        src="/backgrounds/empanadas.jpg"
+                        alt="Franquicias imagen"
+                        layout="fill"
+                        objectFit="cover"
+                        className="h-full w-full"
+                    />
+                    <div className="absolute inset-0 bg-black opacity-30"></div>
+                </div>
+                <div className="absolute inset-0 flex flex-col items-center justify-center text-center gap-1">
+                    <h1 className="text-5xl text-white font-bold uppercase">{titulo}</h1>
+                    <p className="text-4xl text-white">{subtitulo}</p>
+                </div>
             </section>
 
             <section className="flex flex-col text-center items-center py-8">
                 <div className="gap-4 mb-2">
-                    <h2>Franquicias {nombre}</h2>
-                    <p>{descripcion}</p>
+                    <h2 className="text-3xl">Franquicias {nombre}</h2>
+                    <p className="text-2xl">{descripcion}</p>
                 </div>
                 <ul className="mb-2 w-1/2 text-start p-2">
                     {beneficios.map((beneficio, index) => (
@@ -41,7 +54,7 @@ export default function Franquicias() {
 
             <section className="flex justify-center items-center py-8">
                 <div className=" w-11/12 flex">
-                    <GoogleMap/>
+                    <GoogleMap />
                 </div>
             </section>
         </main>
