@@ -15,7 +15,7 @@ export default function Home() {
     <main className="w-full">
 
       <section className="relative h-screen flex flex-col items-center justify-center text-center">
-        <Carousel images={backgrounds} showButtons/>
+        <Carousel images={backgrounds} showButtons autoplay/>
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center py-8 pointer-events-none">
           <h1 className="text-5xl text-white font-bold uppercase">
             Empanadas:
@@ -36,7 +36,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="relative flex flex-col items-center justify-center text-center py-8">
+      <section className="h-screen relative flex flex-col items-center justify-center text-center py-8">
         <div className="absolute inset-0 z-0">
           <Image
             src="/backgrounds/empanadas.jpg"

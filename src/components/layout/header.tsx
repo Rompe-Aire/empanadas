@@ -4,55 +4,54 @@ import React from "react";
 import Image from "next/image";
 import { Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenuToggle, NavbarMenu, NavbarMenuItem, Link } from "@nextui-org/react";
 
-export default function Header() {
-  const logo = "/logo.png";
-  const marca = "La Leyenda";
-
+export default function App() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
   const navItems = [
-    { label: "Nosotros", href: "/#nosotros" },
-    { label: "Productos", href: "/productos" },
-    { label: "Franquicias", href: "/franquicias" },
-    { label: "Contacto", href: "/#contacto" },
-    { label: "Mayorista", href: "/mayorista" }
+    { href: "/", label: "Inicio" },
+    { href: "/productos", label: "Nuestra Carta" },
+    { href: "/franquicias#locales", label: "Donde Estamos" },
+    { href: "/franquicias", label: "Franquicias" },
+    { href: "/mayorista", label: "Venta Mayorista" },
+    { href: "/#contacto", label: "Contacto" },
   ];
 
   return (
-    <header className="mb-16">
-      <Navbar className="bg-black"
-        onMenuOpenChange={setIsMenuOpen}
-        isBordered
-        isBlurred={false} 
-        style={{ position: "fixed", width: "100%", zIndex: 1000 }}
-      >
-        <NavbarContent>
-          <NavbarMenuToggle aria-label={isMenuOpen ? "Close menu" : "Open menu"} className="sm:hidden" />
+    <Navbar onMenuOpenChange={setIsMenuOpen} isBordered>
+      <NavbarContent>
+        <NavbarMenuToggle
+          aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+          className="sm:hidden"
+        />
+        <NavbarBrand>
+          <Link className="flex gap-1" href="/">
+            <Image src="/logo.png" alt="logo" width={50} height={50} />
+            <p className="font-bold text-inherit">La Leyenda</p>
+          </Link>
+        </NavbarBrand>
+      </NavbarContent>
 
-          <NavbarBrand>
-            <Link href="/">
-              <Image src={logo} alt={marca} width={64} height={64} />
-              <p className="font-bold text-inherit">{marca}</p>
+      <NavbarContent className="hidden sm:flex gap-4" justify="center">
+        {navItems.map((item, index) => (
+          <NavbarItem key={index}>
+            <Link href={item.href}>{item.label}</Link>
+          </NavbarItem>
+        ))}
+      </NavbarContent>
+
+      <NavbarContent justify="end">
+
+      </NavbarContent>
+
+      <NavbarMenu>
+        {navItems.map((item, index) => (
+          <NavbarMenuItem key={index}>
+            <Link className="w-full" href={item.href} size="lg">
+              {item.label}
             </Link>
-          </NavbarBrand>
-        </NavbarContent>
-
-        <NavbarContent className="hidden sm:flex gap-4" justify="start">
-          {navItems.map((item, index) => (
-            <NavbarItem key={`${item.label}-${index}`}>
-              <Link href={item.href}>{item.label}</Link>
-            </NavbarItem>
-          ))}
-        </NavbarContent>
-
-        <NavbarMenu className="bg-black">
-          {navItems.map((item, index) => (
-            <NavbarMenuItem key={`${item.label}-${index}`} className=" flex flex-col gap-2">
-              <Link href={item.href}>{item.label}</Link>
-            </NavbarMenuItem>
-          ))}
-        </NavbarMenu>
-      </Navbar>
-    </header>
+          </NavbarMenuItem>
+        ))}
+      </NavbarMenu>
+    </Navbar>
   );
 }

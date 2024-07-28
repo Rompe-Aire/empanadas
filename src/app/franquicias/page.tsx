@@ -52,8 +52,8 @@ export default function Franquicias() {
                 <Button radius="full" className="bg-yellow-500">Contactanos</Button>
             </section>
 
-            <section className="flex justify-center items-center py-8">
-                <div className=" w-11/12 flex">
+            <section className="flex justify-center items-center py-8 h-screen" id="locales"> 
+                <div className=" w-11/12 h-5/6">
                     <GoogleMap />
                 </div>
             </section>

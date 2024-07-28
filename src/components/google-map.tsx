@@ -7,7 +7,7 @@ export default function GoogleMap() {
       allowFullScreen
       referrerPolicy="no-referrer-when-downgrade"
       title="Google Map"
-      className="w-full h-[450px]"
+      className="w-full h-full"
     />
   )
 }
